@@ -1,0 +1,56 @@
+data_collection:
+  reddit:
+    subreddits:
+      - "depression"
+      - "anxiety"
+      - "mentalhealth"
+      - "bipolar"
+      - "ptsd"
+    time_filter: "month"
+    post_limit: 1000
+    comment_limit: 100
+
+preprocessing:
+  text_cleaning:
+    remove_urls: true
+    remove_emojis: true
+    remove_special_chars: true
+    lowercase: true
+  tokenization:
+    min_token_length: 2
+    remove_stopwords: true
+    lemmatize: true
+  language: "en"
+
+sentiment_analysis:
+  models:
+    vader:
+      enabled: true
+    bert:
+      model_name: "bert-base-uncased"
+      max_length: 512
+      batch_size: 16
+      learning_rate: 2e-5
+      epochs: 3
+      validation_split: 0.2
+
+visualization:
+  wordcloud:
+    width: 800
+    height: 400
+    background_color: "white"
+  plots:
+    style: "seaborn"
+    figure_size: [10, 6]
+    dpi: 100
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  timeout: 60
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/app.log" 
