@@ -41,7 +41,7 @@ git clone https://github.com/yourusername/NLP_Sentiment_Analysis.git
 cd NLP_Sentiment_Analysis
 ```
 
-2. Create a virtual environment:
+1. Create a virtual environment:
 
 ```bash
 python -m venv venv
@@ -69,7 +69,7 @@ cp .env.example .env
 python src/data_collection/reddit_scraper.py
 ```
 
-2. Preprocessing:
+1. Preprocessing:
 
 ```bash
 python src/preprocessing/preprocess.py
